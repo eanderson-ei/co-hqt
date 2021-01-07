@@ -675,7 +675,7 @@ def CalcZonalStats(in_zone_data, zone_field, in_value_raster, out_table):
     else:
         tmp_raster = in_value_raster
     # Calculate zonal statistics
-    arcpy.gp.ZonalStatisticsAsTable(in_zone_data, zone_field, tmp_raster,
+    arcpy.gp.ZonalStatisticsAsTable_sa(in_zone_data, zone_field, tmp_raster,
                                     out_table, "DATA", "MEAN")
     if resample:
         arcpy.Delete_management(tmp_raster)
